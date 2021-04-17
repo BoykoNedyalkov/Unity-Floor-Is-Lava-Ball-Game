@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrackPlayer : MonoBehaviour
+public class DestroyPlayer : MonoBehaviour
 {
-    public GameObject trackingObject;
-    public Vector3 offset = new Vector3(0, 1, -1);
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +13,12 @@ public class TrackPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = trackingObject.transform.position + offset;
+        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Destroy(other.gameObject);
+        Debug.Log("Game Over");
     }
 }
