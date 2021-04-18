@@ -18,7 +18,7 @@ public class WinCondition : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        if(other.gameObject.CompareTag("Player"))
         {
             Debug.Log("You have won!");
         }
