@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TrackPlayer : MonoBehaviour
 {
-    public GameObject trackingObject;
+    public GameObject playerObject;
     public Vector3 offset = new Vector3(0, 1, -1);
     // Start is called before the first frame update
     void Start()
@@ -15,9 +13,9 @@ public class TrackPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(trackingObject!= null)
+        if(playerObject!= null)
         {
-            transform.position = trackingObject.transform.position + offset;
+            transform.position = playerObject.transform.position;
         }
     }
 }
